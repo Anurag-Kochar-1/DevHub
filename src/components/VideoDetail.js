@@ -20,35 +20,38 @@ const VideoDetail = () => {
       .then((data) => setVideos(data.items))
   }, [id]);
 
-  if(!videoDetail?.snippet) return <Loader />;
+  
 
-  const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
+  // const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
 
-  console.log(videoDetail)
+  
+
+  if(!videos?.length) return <Loader />;
+  // console.log(videoDetail.snippet)
 
   return (
     <Box minHeight="95vh">
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex={1}>
-          <Box sx={{ width: "100%", position: "relative", top: "86px" }}>
+          <Box sx={{ width: "100%", position: "relative", top: "0" }}>
             <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} className="react-player" controls playing={true} />
 
             <Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
-              {title}
+              {videoDetail?.snippet.title}
             </Typography>
             <Stack direction="row" justifyContent="space-between" sx={{ color: "#fff" }} py={1} px={2} >
-              <Link to={`/channel/${channelId}`}>
+              <Link to={`/channel/${videoDetail?.snippet?.channelId}`}>
                 <Typography sx={{typography: { sm: 'subtitle1', md: 'h6' }}} color='#fff'> 
-                  {channelTitle}
+                  {videoDetail?.snippet?.channelTitle}
                   <CheckCircleIcon sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
                 </Typography>
               </Link>
               <Stack direction="row" gap="20px" alignItems="center">
                 <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                  {viewCount &&  parseInt(viewCount).toLocaleString()} views
+                  {videoDetail?.statistics?.viewCount &&  parseInt(videoDetail?.statistics?.viewCount).toLocaleString()} views
                 </Typography>
                 <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                  {likeCount &&  parseInt(likeCount).toLocaleString()} likes
+                  {videoDetail?.statistics?.likeCount &&  parseInt(videoDetail?.statistics?.likeCount).toLocaleString()} likes
                 </Typography>
               </Stack>
             </Stack>
@@ -57,6 +60,8 @@ const VideoDetail = () => {
 
         <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center" >
             <Videos videos={videos} direction="column" />
+
+            {/* <button onClick={() => console.log(videoDetail?.statistics) } > LOG BUTTON </button> */}
         </Box>
 
       </Stack>    

@@ -10,10 +10,10 @@ const Navbar = () => (
     alignItems='center' 
     p={2} s
     sx={{position: "sticky", backgroundColor: "#0000", top: 0, 
-    justifyContent: "space-between"
+    justifyContent: "space-between" , zIndex:"10", backgroundColor: "#121212"
+    
     }} 
-    // zIndex='10'
-    color = "blue"
+    
     >
 
 
