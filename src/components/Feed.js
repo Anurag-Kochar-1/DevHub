@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Box, Stack, Typography } from "@mui/material" 
 import {Sidebar, Videos} from "./"
 import { FetchFromApi } from '../utils/FetchFromApi'
+import "../index.css"
 
 function Feed() {
 
@@ -15,7 +16,8 @@ function Feed() {
     },[selectedCategory])
 
   return (
-    <Stack sx={{flexDirection: {sx:"column", md:"row"} }}>
+
+    <Stack sx={{flexDirection: {xs:"column", sm:"column", md:"row"} } }  >
         <Box sx={{height: {xs:"auto" , md: "92vh" }, borderRight : "1px solid #3d3d3d", px: {xs:0, md:2}}}>
 
             <Sidebar
@@ -30,7 +32,10 @@ function Feed() {
             </Typography>
         </Box>
 
-        <Box p={2} sx={{overflowY: "auto",height: "90vh", flex: 2}}>
+        <Box p={2} sx={{overflowY: "auto",height: "90vh", flex: 2 ,
+            display: "flex", flexDirection: "column" , alignItems: "start"
+      
+            }}    className="BoxOfVideosContainer"> //
             <Typography
             variant='h4' fontWeight={"bold"} mb={2}
             sx={{color: "white"}}

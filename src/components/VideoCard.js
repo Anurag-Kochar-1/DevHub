@@ -9,13 +9,15 @@ import {demoThumbnailUrl, demoVideoUrl , demoVideoTitle , demoChannelUrl, demoCh
 function VideoCard({ video: {id: {videoId} , snippet} }) {
     // console.log(videoId, snippet);
   return (
-    <Card sx={{ width: {md: "320px" , xs:"100%" }, boxShadow:"none", borderRadius:0 }}>
+    <Card  sx={{ width: {md: "320px" , xs:"90vw", sm: "80vw"  }   , boxShadow:"none", borderRadius:0 }}  > 
         <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}> 
             <CardMedia 
                 component='img'
                 image={snippet?.thumbnails?.high?.url} 
                 alt = {snippet?.title}
-                sx={{width: 358, height: 180}}
+                sx={{width: {
+                    xs: "100%", sm:"80vw" , md:"320px"
+                }, height: 180}}
                 />
         </Link>
 

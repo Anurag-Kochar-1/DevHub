@@ -7,7 +7,7 @@ function Videos({videos , direction}) {
     
     
   return (
-    <Stack direction={direction || "row"}  flexWrap="wrap"
+    <Stack direction={direction || "row"} sx={{ alignItems: "center", justifyContent: "center"}}  flexWrap="wrap"
     justifyContent="start" gap={2}
     >
         {videos.map((item, indx) => {
