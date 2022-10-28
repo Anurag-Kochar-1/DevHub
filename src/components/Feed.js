@@ -28,7 +28,7 @@ function Feed() {
             <Typography className="copyright"
             variant='body2' sx={{mt:1.5, color: "#fff"}}
             >
-                Copyright 2022 JSM Media
+                Anurag kochar 2022 
             </Typography>
         </Box>
 
