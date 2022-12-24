@@ -13,7 +13,7 @@ import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 
 // export const logo = 'https://i.ibb.co/s9Qys2j/logo.png';
-export const logo = 'https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png';
+export const logo = 'https://th.bing.com/th/id/R.88e5c6e500fcaff465e4418268e86b1a?rik=osIl5K%2fVnQs%2b8g&riu=http%3a%2f%2fwww.robopix.de%2fwp-content%2fuploads%2f2014%2f09%2fyoutube_logo_100px.png&ehk=9Nwne4Mu4jWbcCakrpls87lvlYbK1qjFxn2hkL15Mlo%3d&risl=&pid=ImgRaw&r=0';
 
 export const categories = [
   { name: 'New', icon: <HomeIcon />,  id: 1 } ,

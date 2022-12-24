@@ -29,9 +29,9 @@ function Feed() {
             />
 
             <Typography className="copyright"
-            variant='body2' sx={{mt:1.5, color: "#fff"}}
+            variant='body2' sx={{marginY:3, color: "#fff", fontWeight:"bold"}}
             >
-                Anurag kochar 2022 
+                Anurag Kochar 2022 
             </Typography>
         </Box>
 
