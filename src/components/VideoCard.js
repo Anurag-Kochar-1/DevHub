@@ -6,7 +6,7 @@ import "../index.css"
 import { demoVideoUrl , demoVideoTitle , demoChannelUrl, demoChannelTitle  } from "../utils/constant"
 
 const optionsConfig = {
-    rootMargin: '100px 0px 0px 0px',
+    rootMargin: '300px 0px 0px 0px',
     threshold: 0,
 }
 
