@@ -48,7 +48,15 @@ function Feed() {
               {selectedCategory}  <span style={{color: "#F31503"}}> Videos </span>
             </Typography>
 
-            <Videos videos={videos} />
+            {!videos && (
+                <Box sx={{backgroundColor: "red", zIndex: "100" , position: "fixed", top: "0", right: "0", left:"0", bottom: "0", width: "100vw", height: "100vh" , display: 'flex', justifyContent: "center", alignItems: "center" }}> 
+                <CircularProgress /> 
+                </Box>
+            )}
+
+            {videos && (<Videos videos={videos} />
+            )}
+           
 
             
         </Box>
