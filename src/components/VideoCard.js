@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {Typography, Card , CardContent, CardMedia } from "@mui/material"
-import { Check, CheckCircle} from "@mui/icons-material"
+import { CheckCircle} from "@mui/icons-material"
 import "../index.css"
 import { demoVideoUrl , demoVideoTitle , demoChannelUrl, demoChannelTitle  } from "../utils/constant"
 
 const optionsConfig = {
-    rootMargin: '0px 0px 0px 0px',
-    threshold: 0.9,
+    rootMargin: '100px 0px 0px 0px',
+    threshold: 0,
 }
 
 function VideoCard({ video: {id: {videoId} , snippet} }) {
-
+  const [isThumbnailLoaded, setIsThumbnailLoaded] = useState(false)
 
     useEffect(() => {
         let observer = new window.IntersectionObserver((entries, self) => {
@@ -49,17 +49,7 @@ function VideoCard({ video: {id: {videoId} , snippet} }) {
   return (
     <Card  sx={{ width: {md: "320px" , xs:"90vw", sm: "80vw"  }, boxShadow:"none" }}> 
         <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}> 
-            {/* <CardMedia 
-                component='img'
-                image={``} 
-                alt = {snippet?.title}
-                sx={{width: {
-                    xs: "100%", sm:"80vw" , md:"320px"
-                }, height: 180}}
-                data-src={`${snippet?.thumbnails?.high?.url}`} 
-            /> */}
-
-            <img src={``} data-src={`${snippet?.thumbnails?.high?.url}`} alt={snippet?.title} className="videoCard"  />
+          <img src={``} data-src={`${snippet?.thumbnails?.high?.url}`} alt={snippet?.title} className={isThumbnailLoaded ? "videoCard" : "videoCardPlaceholder"} onLoad={() => setIsThumbnailLoaded(true)}  />
                     
         </Link>
 
