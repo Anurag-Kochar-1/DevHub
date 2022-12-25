@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Box, Stack, Typography } from "@mui/material" 
+import {Box, CircularProgress, Stack, Typography } from "@mui/material" 
 import {Sidebar, Videos} from "./"
 import { FetchFromApi } from '../utils/FetchFromApi'
 import "../index.css"
@@ -15,6 +15,9 @@ function Feed() {
         .catch((err) => console.log(err.message) )
     },[selectedCategory])
 
+
+  if(!videos) return <Box sx={{backgroundColor: "black", zIndex: "100" , position: "fixed", top: "0", right: "0", left:"0", bottom: "0", width: "100vw", height: "100vh" , display: 'flex', justifyContent: "center", alignItems: "center" }}> <CircularProgress /> </Box>
+
   return (
 
     <Stack sx={{flexDirection: {xs:"column", sm:"column", md:"row"} } }  >
@@ -26,16 +29,18 @@ function Feed() {
             />
 
             <Typography className="copyright"
-            variant='body2' sx={{mt:1.5, color: "#fff"}}
+            variant='body2' sx={{marginY:3, color: "#fff", fontWeight:"bold"}}
             >
-                Copyright 2022 JSM Media
+                Anurag Kochar 2022 
             </Typography>
         </Box>
 
-        <Box p={2} sx={{overflowY: "auto",height: "90vh", flex: 2 ,
+        <Box p={2} sx={{backgroundColor: "black", overflowY: "auto",height: "90vh", flex: 2 ,
             display: "flex", flexDirection: "column" , alignItems: "start"
       
-            }}    className="BoxOfVideosContainer"> //
+        }}className="BoxOfVideosContainer"> 
+
+
             <Typography
             variant='h4' fontWeight={"bold"} mb={2}
             sx={{color: "white"}}
@@ -43,9 +48,10 @@ function Feed() {
               {selectedCategory}  <span style={{color: "#F31503"}}> Videos </span>
             </Typography>
 
+            
+
             <Videos videos={videos} />
 
-            
         </Box>
     </Stack>
   )
