@@ -31,14 +31,22 @@ const Navbar = () => (
         justifyContent: "center",
       }}
     >
-      <Avatar src={logo} alt="logo" sx={{ width: 45, height: 45 }}></Avatar>
+      <Avatar src={logo} alt="logo" sx={{ width: 45, height: 45,  marginX: 2 }}></Avatar>
+
       <Hidden only={"xs"}>
         <Typography
           variant="h5"
-          sx={{ color: "white", marginX: "10px", fontWeight: "bold" }}
+          sx={{ color: "white", fontWeight: "bold" }}
         >
-          YouTube
+          Dev 
         </Typography>
+        <Typography
+          variant="h5"
+          sx={{ color: "black",backgroundColor:"#ffa31a", fontWeight: "bold", paddingX: 1, borderRadius: 2, marginLeft: 1 }}
+        >
+          Hub 
+        </Typography>
+
       </Hidden>
     </Link>
 
