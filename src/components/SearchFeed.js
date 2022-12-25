@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Box , Typography } from "@mui/material" 
+import {Box , CircularProgress, Typography } from "@mui/material" 
 import {Videos} from "./"
 import { FetchFromApi } from '../utils/FetchFromApi'
 import { useParams } from 'react-router-dom'
@@ -22,7 +22,11 @@ function SearchFeed() {
       </Typography>
       <Box display="flex">
         <Box sx={{ mr: { sm: '100px' } }}/>
-        {<Videos videos={videos} />}
+        {videos &&  <Videos videos={videos} /> }
+
+        {!videos && (
+          <Box sx={{backgroundColor: "black", zIndex: "100" , position: "fixed", top: "0", right: "0", left:"0", bottom: "0", width: "100vw", height: "100vh" , display: 'flex', justifyContent: "center", alignItems: "center" }}> <CircularProgress /> </Box>
+        )}
       </Box>
     </Box>
   )
