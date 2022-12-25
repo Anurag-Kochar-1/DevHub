@@ -13,6 +13,9 @@ const VideoDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
+
+    window.scrollTo(0,0);
+
     FetchFromApi(`videos?part=snippet,statistics&id=${id}`)
       .then((data) => setVideoDetail(data.items[0]))
 
@@ -30,7 +33,7 @@ const VideoDetail = () => {
   // console.log(videoDetail.snippet)
 
   return (
-    <Box minHeight="95vh">
+    <Box minHeight="95vh" sx={{paddingTop: 5}}>
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex={1}>
           <Box sx={{ width: "100%", position: "relative", top: "0" }}>
@@ -47,7 +50,7 @@ const VideoDetail = () => {
                 </Typography>
               </Link>
               <Stack direction="row" gap="20px" alignItems="center">
-                <Typography variant="body1" sx={{ opacity: 0.7 }}>
+                <Typography variant="body1" sx={{ opacity: 0.7 }} onClick={() => console.log(videoDetail)}>
                   {videoDetail?.statistics?.viewCount &&  parseInt(videoDetail?.statistics?.viewCount).toLocaleString()} views
                 </Typography>
                 <Typography variant="body1" sx={{ opacity: 0.7 }}>
