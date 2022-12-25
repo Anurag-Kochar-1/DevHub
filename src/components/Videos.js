@@ -12,8 +12,8 @@ function Videos({videos , direction}) {
     >
         {videos.map((item, indx) => {
             return <Box key={indx} >
-                {item.id.videoId && <VideoCard video={item} /> }
-                {item.id.channelId && <ChannelCard channelDetail={item} />}
+                {item.id.videoId && <VideoCard video={item} key={item?.id?.videoId} /> }
+                {item.id.channelId && <ChannelCard channelDetail={item} key={item.id.channelId}  />}
             </Box>
         })}
 

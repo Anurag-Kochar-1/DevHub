@@ -13,14 +13,19 @@ const VideoDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
-
     window.scrollTo(0,0);
-
+    
     FetchFromApi(`videos?part=snippet,statistics&id=${id}`)
-      .then((data) => setVideoDetail(data.items[0]))
+    .then((data) => setVideoDetail(data.items[0]))
+    
+    FetchFromApi(`search?part=snippet&relatedToVideoId=${id}&type=video`)
+    .then((data) => setVideos(data?.items?.slice(0,15) || data?.items ))
 
-      FetchFromApi(`search?part=snippet&relatedToVideoId=${id}&type=video`)
-      .then((data) => setVideos(data.items))
+    document.title = videoDetail?.snippet.title || "YouTube"
+
+    return () => {
+      document.title = "YouTube"
+    }
   }, [id]);
 
   
