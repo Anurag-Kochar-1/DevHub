@@ -36,7 +36,7 @@ function Feed() {
         </Box>
 
         <Box p={2} sx={{backgroundColor: "black", overflowY: "auto",height: "90vh", flex: 2 ,
-            display: "flex", flexDirection: "column" , alignItems: "start"
+            display: "flex", flexDirection: "column" , alignItems: "start"  
       
         }}className="BoxOfVideosContainer"> 
 

@@ -39,18 +39,9 @@ a {
   width: 100% !important;
 }
 
-/* .search-bar{
-  width: 60%;
-  border:none;
-  outline:none;
-} */
-
-/* @media screen and (min-width: 500px) {
-  .search-bar {
-    width: "250px"
-    background-color: blueviolet;
-  }
-} */
+.transitionProperty {
+  transition: all 400ms ease-in-out;
+}
 
 .category-btn{
   font-weight: bold !important;
