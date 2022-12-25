@@ -1,37 +1,40 @@
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
-import HomeIcon from '@mui/icons-material/Home';
-import CodeIcon from '@mui/icons-material/Code';
-import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import SickIcon from '@mui/icons-material/Sick';
+import MovieIcon from '@mui/icons-material/Movie';
+import SportsCricketIcon from '@mui/icons-material/SportsCricket';
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import ChildCareIcon from '@mui/icons-material/ChildCare';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
-import SchoolIcon from '@mui/icons-material/School';
-import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
-import CheckroomIcon from '@mui/icons-material/Checkroom';
-import GraphicEqIcon from '@mui/icons-material/GraphicEq';
-import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import DiamondIcon from '@mui/icons-material/Diamond';
+import SportsFootballIcon from '@mui/icons-material/SportsFootball';import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
+import NightlifeIcon from '@mui/icons-material/Nightlife';
+
 
 // export const logo = 'https://i.ibb.co/s9Qys2j/logo.png';
 export const logo = 'https://th.bing.com/th/id/R.88e5c6e500fcaff465e4418268e86b1a?rik=osIl5K%2fVnQs%2b8g&riu=http%3a%2f%2fwww.robopix.de%2fwp-content%2fuploads%2f2014%2f09%2fyoutube_logo_100px.png&ehk=9Nwne4Mu4jWbcCakrpls87lvlYbK1qjFxn2hkL15Mlo%3d&risl=&pid=ImgRaw&r=0';
 
 export const categories = [
-  { name: 'New', icon: <HomeIcon />,  id: 1 } ,
-  { name: 'Coding', icon: <CodeIcon />, id:2 },
-  { name: 'ReactJS', icon: <CodeIcon />, id:3 },
-  { name: 'NextJS', icon: <CodeIcon />, id: 4},
-  { name: 'Music', icon: <MusicNoteIcon />, id: 5},
-  { name: 'Education', icon: <SchoolIcon />, id: 6},
-  { name: 'Podcast', icon: <GraphicEqIcon />, id: 7},
-  { name: 'Movie', icon: <OndemandVideoIcon />, id:8},
-  { name: 'Gaming', icon: <SportsEsportsIcon />, id:9},
+  { name: 'Trending', icon: <TrendingUpIcon />,  id: 1 } ,
+  { name: 'Music', icon: <MusicNoteIcon />, id:2 },
+  { name: 'Covid', icon: <SickIcon />, id:3 },
+  { name: 'Bollywood', icon: <MovieIcon />, id: 4},
+  { name: 'Cricket', icon: <SportsCricketIcon />, id: 5},
+  { name: 'Automobile', icon: <DirectionsCarIcon />, id: 6},
+  { name: 'News', icon: <NewspaperIcon />, id: 7},
+  { name: 'Stories', icon: <AutoStoriesIcon />, id:8},
+  { name: 'Kids', icon: <ChildCareIcon />, id:9},
   { name: 'Live', icon: <LiveTvIcon />, id:10},
-  { name: 'Sport', icon: <FitnessCenterIcon />, id:11},
-  { name: 'Fashion', icon: <CheckroomIcon />, id: 12},
-  { name: 'Beauty', icon: <FaceRetouchingNaturalIcon />, id: 13},
+  { name: 'Football', icon: <SportsFootballIcon />, id:11},
+  { name: 'Fashion', icon: <DiamondIcon />, id: 12},
+  { name: 'Gaming', icon: <SportsEsportsIcon />, id: 13},
   { name: 'Comedy', icon: <TheaterComedyIcon />, id:14},
-  { name: 'Gym', icon: <FitnessCenterIcon />, id:15},
-  { name: 'Crypto', icon: <DeveloperModeIcon />, id:16},
+  { name: 'Fitness', icon: <FitnessCenterIcon />, id:15},
+  { name: 'Dance', icon: <NightlifeIcon />, id:16},
 ];
 
 export const demoThumbnailUrl = 'https://i.ibb.co/G2L2Gwp/API-Course.png';

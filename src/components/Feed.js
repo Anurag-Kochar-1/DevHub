@@ -20,8 +20,8 @@ function Feed() {
 
   return (
 
-    <Stack sx={{flexDirection: {xs:"column", sm:"column", md:"row"} } }  >
-        <Box sx={{height: {xs:"auto" , md: "92vh" }, borderRight : "1px solid #3d3d3d", px: {xs:0, md:2}}}>
+    <Stack sx={{flexDirection: {xs:"column", sm:"column", md:"row"}} }  >
+        <Box sx={{height: {xs:"auto" , md: "91vh" }, borderRight : "1px solid #3d3d3d", px: {xs:0, md:2}}}>
 
             <Sidebar
             selectedCategory={selectedCategory}
@@ -36,7 +36,7 @@ function Feed() {
         </Box>
 
         <Box p={2} sx={{backgroundColor: "black", overflowY: "auto",height: "90vh", flex: 2 ,
-            display: "flex", flexDirection: "column" , alignItems: "start"  
+            display: "flex", flexDirection: "column" , alignItems: "start"
       
         }}className="BoxOfVideosContainer"> 
 
@@ -44,6 +44,7 @@ function Feed() {
             <Typography
             variant='h4' fontWeight={"bold"} mb={2}
             sx={{color: "white"}}
+            onClick={() => console.log(videos)}
             >
               {selectedCategory}  <span style={{color: "#F31503"}}> Videos </span>
             </Typography>

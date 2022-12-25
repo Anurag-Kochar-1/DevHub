@@ -11,7 +11,7 @@ function Videos({videos , direction}) {
     justifyContent="start" gap={2}
     >
         {videos.map((item, indx) => {
-            return <Box key={indx}>
+            return <Box key={indx} >
                 {item.id.videoId && <VideoCard video={item} /> }
                 {item.id.channelId && <ChannelCard channelDetail={item} />}
             </Box>

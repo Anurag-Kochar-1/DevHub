@@ -36,7 +36,7 @@ function VideoCard({ video: {id: {videoId} , snippet} }) {
             observer.unobserve(img)
           })
         }
-      },[])
+      },[videoId])
 
     
       const loadImage = (image) => {
