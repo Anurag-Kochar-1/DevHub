@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
-import { Paper, IconButton, TextField, Input } from "@mui/material";
+import { Paper, IconButton, TextField, Input, Hidden } from "@mui/material";
 import { Search } from "@mui/icons-material";
+
+
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
+
+  const [isSearchInputVisible, setIsSearchInputVisible] = useState(true)
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -24,43 +29,39 @@ function SearchBar() {
       onSubmit={handleSubmit}
       sx={{
         display: "flex",
-        justifyContent: "end",
+        justifyContent:"space-between",
         alignItems: "center",
-        width: {xs: "50%" , md: "20%", lg: "20%"},
-        backgroundColor: "white",
+        width: {xs: "50%",sm: "35%", md: "40%", lg: "50%"},
+        backgroundColor: "#292929",
         borderRadius: 20,
-        border: "1px solid #3e3e3",
-        pl: 2,
+        px: 2,
         boxShadow: "none",
-        mr: { xs: 5 },
       }}
     >
-      {/* <input
-        // sx={{width: {xs: 20, md:"40%"}, border: "none", outline: "none", backgroundColor:"blue"}}
-        fullWidth 
-        placeholder="Search..."
-        value={searchTerm}
-        onChange={(e) => {
-          setSearchTerm(e.target.value);
-        }}
-        className="search-bar"
-      /> */}
+
 
       <Input 
-      fullWidth  
+      fullWidth
+      sx={{ color: "white", px: "5px"}}  
       placeholder="Search..."  
       value={searchTerm} 
       onChange={(e) => {
-          setSearchTerm(e.target.value);
+        setSearchTerm(e.target.value);
       }} 
       label="Standard error"
       variant="standard"
       color="error"
-        
-        />
-      <IconButton type="submit" sx={{ p: "10px", color: "red" }}>
+      />
+
+
+
+
+
+      <IconButton type="submit" sx={{ p: "10px", color: "white" }}  >
         <Search />
       </IconButton>
+
+
     </Paper>
   );
 }
