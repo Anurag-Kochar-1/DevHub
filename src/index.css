@@ -116,3 +116,16 @@ a {
     background-color: #FC1503;
   } */
 }
+
+
+
+/* Transitions */
+
+.scaleIT {
+  transition: all 400ms ease-in-out;
+  /* border-radius: "40%"; */
+}
+
+.scaleIT:hover {
+  transform: scale(1.1);
+}
