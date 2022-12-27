@@ -31,7 +31,7 @@ const Navbar = () => (
         justifyContent: "center",
       }}
     >
-      <Avatar src={logo} alt="logo" sx={{ width: 45, height: 45,  marginX: 2 }}></Avatar>
+      {/* <Avatar src={logo} alt="logo" sx={{ width: 45, height: 45,  marginX: 2 }}></Avatar> */}
 
       <Hidden only={"xs"}>
         <Typography
