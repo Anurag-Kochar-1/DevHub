@@ -10,9 +10,12 @@ function SearchFeed() {
     const [videos, setVideos] = useState([])
 
     useEffect(() => {
-        FetchFromApi (`search?part=snippet&q=${searchTerm}`)
-        .then((data) => setVideos(data.items))
+      window.scrollTo(0,0);
+      
+      FetchFromApi (`search?part=snippet&q=${searchTerm}`)
+      .then((data) => setVideos(data.items))
         .catch((err) => console.log(err.message) )
+
     },[searchTerm])
 
   return (

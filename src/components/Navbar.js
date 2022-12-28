@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import { logo } from "../utils/constant";
 import SearchBar from "./SearchBar";
 // ICONS
-import VideoCallOutlinedIcon from '@mui/icons-material/VideoCallOutlined';
-import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
+import VideoCallOutlinedIcon from "@mui/icons-material/VideoCallOutlined";
+import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
+import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
+
+const Navbar = () => {
+  // console.log(`**** Navbar is rendered ******`)
+
 
 const Navbar = () => (
   <Stack
@@ -31,41 +35,42 @@ const Navbar = () => (
         justifyContent: "center",
       }}
     >
-      <Avatar src={logo} alt="logo" sx={{ width: 45, height: 45,  marginX: 2 }}></Avatar>
-
+      <Avatar src={logo} alt="logo" sx={{ width: 45, height: 45 }}></Avatar>
       <Hidden only={"xs"}>
-       <Typography
+        <Typography
           variant="h5"
-          sx={{ color: "white", fontWeight: "bold" }}
+          sx={{ color: "white", marginX: "10px", fontWeight: "bold" }}
         >
-          YouTube 
+          YouTube
         </Typography>
-
-
       </Hidden>
     </Link>
 
-    <SearchBar />
+      <SearchBar />
 
-    <Hidden only={"xs"}>
-        <Stack direction="row" spacing={2} >
-            <IconButton sx={{ "&:hover": { color: "lightgray" } , color: "white",}}>
-                <VideoCallOutlinedIcon  />
-            </IconButton>
+      <Hidden only={"xs"}>
+        <Stack direction="row" spacing={2}>
+          <IconButton
+            sx={{ "&:hover": { color: "lightgray" }, color: "white" }}
+          >
+            <VideoCallOutlinedIcon />
+          </IconButton>
 
-            <IconButton sx={{ "&:hover": { color: "lightgray" } , color: "white",}}>
-                <NotificationsOutlinedIcon  sx={{ color: "white" }} />
-            </IconButton>
+          <IconButton
+            sx={{ "&:hover": { color: "lightgray" }, color: "white" }}
+          >
+            <NotificationsOutlinedIcon sx={{ color: "white" }} />
+          </IconButton>
 
-            <IconButton sx={{ "&:hover": { color: "lightgray" } , color: "white",}}>
-                <PermIdentityOutlinedIcon  sx={{ color: "white"}} />
-            </IconButton>
-
-           
+          <IconButton
+            sx={{ "&:hover": { color: "lightgray" }, color: "white" }}
+          >
+            <PermIdentityOutlinedIcon sx={{ color: "white" }} />
+          </IconButton>
         </Stack>
-    </Hidden>
-
-  </Stack>
-);
+      </Hidden>
+    </Stack>
+  );
+};
 
 export default Navbar;

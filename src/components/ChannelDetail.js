@@ -18,7 +18,7 @@ function ChannelDetail() {
         .then((data) => setChannelVideos(data?.items) )
     },[id])
 
-    console.log(channelVideos, channelDetail)
+    // console.log(channelVideos, channelDetail)
 
   return (
     <Box minHeight='95vh'> 
