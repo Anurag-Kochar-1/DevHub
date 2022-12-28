@@ -7,10 +7,10 @@ import {categories} from "../utils/constant"
 const Sidebar = ( { selectedCategory , setSelectedCategory } ) => (
     <Stack direction="row"
     sx={{
+        backgroundColor: "blue",
         overflowY: "auto",
-        height: {xs: "auto", md:"95%"},
+        height: {xs: "auto", md:"100%"},
         flexDirection: {md: "column"},
-        py: "7px"
     }}
     >
     {categories.map((category) => (
@@ -31,7 +31,7 @@ const Sidebar = ( { selectedCategory , setSelectedCategory } ) => (
             >{category.icon}</span>
 
             <span
-            style={{opacity: category.value === selectedCategory ? "1" : "0.8" }}
+            style={{opacity: category.value === selectedCategory ? "1" : "0.8", textAlign: "center"}}
             >{category.name}</span>
         </button>
     ))}

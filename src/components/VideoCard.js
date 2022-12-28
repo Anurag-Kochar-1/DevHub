@@ -15,8 +15,6 @@ function VideoCard({ video: {id: {videoId} , snippet} }) {
 
     useEffect(() => {
         let observer = new window.IntersectionObserver((entries, self) => {
-        //    console.log(entries)
-           
           entries.forEach((entry) => {
             if(entry.isIntersecting) {
               loadImage(entry.target)
@@ -47,16 +45,18 @@ function VideoCard({ video: {id: {videoId} , snippet} }) {
 
   return (
     <Zoom in={true} className="transitionProperty">
-      <Card sx={{ width: {md: "320px" , xs:"90vw", sm: "80vw"  }, boxShadow:"none" }}> 
-          <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}> 
+      
+      <Card sx={{ width: {xs:"70vw", sm: "40vw", md: "20vw",  }, boxShadow:"none", borderRadius: "10px", display: "flex", flexDirection: "column", justifyContent: "start", alignItems: "center" }} onClick={() => console.log(snippet)}> 
+
+          <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
             <img src={``} data-src={`${snippet?.thumbnails?.high?.url}`} alt={snippet?.title} className={isThumbnailLoaded ? "videoCard" : "videoCardPlaceholder"} onLoad={() => setIsThumbnailLoaded(true)}  />
-                      
           </Link>
 
-          <CardContent sx={{backgroundColor: "#1e1e1e", height: "106px"}} >
+          <CardContent sx={{backgroundColor: "#1e1e1e", width: "100%"}} >
               <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}> 
                   <Typography variant='subtitle1' 
                   fontWeight='bold' color="#FFF"
+                  sx={{paddingX: 2, paddingY: 1}}
                   >
                       {snippet?.title.slice(0,60) || demoVideoTitle.slice(0,60)}
                   </Typography>
@@ -65,6 +65,7 @@ function VideoCard({ video: {id: {videoId} , snippet} }) {
               <Link to={snippet?.channelId ? `/channel/${snippet?.channelId}` : demoChannelUrl}> 
                   <Typography variant='subtitle2' 
                   fontWeight='bold' color="gray"
+                  sx={{paddingX: 2, paddingY: 1}}
                   >
                       {snippet?.channelTitle || demoChannelTitle}
                       <CheckCircle sx={{fontSize: 12, color: "gray", ml: "5px"}} />

@@ -22,24 +22,18 @@ function Feed() {
 
     return (
 
-        <Stack sx={{ flexDirection: { xs: "column", sm: "column", md: "row" } }}  >
-            <Box sx={{ height: { xs: "auto", md: "92vh" }, borderRight: "1px solid #3d3d3d", px: { xs: 0, md: 2 } }}>
+        <Stack sx={{ flexDirection: { xs: "column", sm: "column", md: "row", backgroundColor: "red", height: "93vh" } }}  >
 
+            <Box sx={{ backgroundColor: "orange", height: {xs:"auto" , md: "93vh" }, borderRight: "1px solid #3d3d3d", px: { xs: 0, md: 1 } }}>
                 <Sidebar
                     selectedCategory={selectedCategory}
                     setSelectedCategory={setSelectedCategory}
                 />
-
-                <Typography className="copyright"
-                    variant='body2' sx={{ marginY: 3, color: "#fff", fontWeight: "bold" }}
-                >
-                    Anurag Kochar 2022
-                </Typography>
             </Box>
 
-            <Box p={2} sx={{
-                backgroundColor: "black", overflowY: "auto", height: "90vh", flex: 2,
-                display: "flex", flexDirection: "column", alignItems: "start"
+            <Box px={2} py={3} sx={{
+                backgroundColor: "black", overflowY: "auto",  flex: 2,
+                display: "flex", flexDirection: "column", alignItems: "start",
 
             }} className="BoxOfVideosContainer">
 
@@ -47,7 +41,7 @@ function Feed() {
                 {selectedCategory !== "Web Development" && (
                     <Typography
                         variant='h4' fontWeight={"bold"} mb={2}
-                        sx={{ color: "white", marginY: 3, marginX: 1 }}
+                        sx={{ color: "white" }}
                     >
                         {selectedCategory} <span style={{ color: "#ffa31a" }}> Videos </span>
                     </Typography>
