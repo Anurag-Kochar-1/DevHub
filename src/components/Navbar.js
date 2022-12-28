@@ -34,18 +34,13 @@ const Navbar = () => (
       <Avatar src={logo} alt="logo" sx={{ width: 45, height: 45,  marginX: 2 }}></Avatar>
 
       <Hidden only={"xs"}>
-        <Typography
+       <Typography
           variant="h5"
           sx={{ color: "white", fontWeight: "bold" }}
         >
-          Dev 
+          YouTube 
         </Typography>
-        <Typography
-          variant="h5"
-          sx={{ color: "black",backgroundColor:"#ffa31a", fontWeight: "bold", paddingX: 1, borderRadius: 2, marginLeft: 1 }}
-        >
-          Hub 
-        </Typography>
+
 
       </Hidden>
     </Link>
