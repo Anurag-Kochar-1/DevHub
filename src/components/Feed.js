@@ -3,6 +3,7 @@ import { Box, CircularProgress, Stack, Typography } from "@mui/material"
 import { Sidebar, Videos } from "./"
 import { FetchFromApi } from '../utils/FetchFromApi'
 import "../index.css"
+import introGif from '../assets/gifs/introGif.gif'
 
 function Feed() {
 
@@ -12,19 +13,24 @@ function Feed() {
     useEffect(() => {
         FetchFromApi(`search?part=snippet&q=${selectedCategory}`)
             .then((data) => {
-                setVideos(data.items)
+                setVideos(data.items) 
             })
             .catch((err) => console.log(err.message))
     }, [selectedCategory])
 
 
-    if (!videos) return <Box sx={{ backgroundColor: "black", zIndex: "100", position: "fixed", top: "0", right: "0", left: "0", bottom: "0", width: "100vw", height: "100vh", display: 'flex', justifyContent: "center", alignItems: "center" }}> <CircularProgress /> </Box>
+    if (!videos) return (
+        <Box sx={{ backgroundColor: "black", zIndex: "100", position: "fixed", top: "0", right: "0", left: "0", bottom: "0", width: "100vw", height: "100vh", display: 'flex', justifyContent: "center", alignItems: "center" }}>                
+            {/* <CircularProgress />  */}
+            <img src={introGif} alt="intro" />
+         </Box>
+    )
 
     return (
 
-        <Stack sx={{ flexDirection: { xs: "column", sm: "column", md: "row", backgroundColor: "red", height: "93vh" } }}  >
+        <Stack sx={{ flexDirection: { xs: "column", sm: "column", md: "row", backgroundColor: "black", height: "93vh" } }}  >
 
-            <Box sx={{ backgroundColor: "orange", height: {xs:"auto" , md: "93vh" }, borderRight: "1px solid #3d3d3d", px: { xs: 0, md: 1 } }}>
+            <Box sx={{ height: {xs:"auto" , md: "93vh" }, borderRight: "1px solid #3d3d3d", px: { xs: 0, md: 1 } }}>
                 <Sidebar
                     selectedCategory={selectedCategory}
                     setSelectedCategory={setSelectedCategory}
@@ -33,14 +39,14 @@ function Feed() {
 
             <Box px={2} py={3} sx={{
                 backgroundColor: "black", overflowY: "auto",  flex: 2,
-                display: "flex", flexDirection: "column", alignItems: "start",
+                display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "start"
 
             }} className="BoxOfVideosContainer">
 
 
                 {selectedCategory !== "Web Development" && (
                     <Typography
-                        variant='h4' fontWeight={"bold"} mb={2}
+                        variant='h4' fontWeight={"bold"} py={2}
                         sx={{ color: "white" }}
                     >
                         {selectedCategory} <span style={{ color: "#ffa31a" }}> Videos </span>
@@ -50,6 +56,8 @@ function Feed() {
 
 
                 <Videos videos={videos} />
+                
+
 
             </Box>
         </Stack>
