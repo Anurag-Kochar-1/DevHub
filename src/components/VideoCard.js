@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Typography, Card, CardContent, CardMedia, Zoom } from "@mui/material"
-import { CheckCircle } from "@mui/icons-material"
+import { CheckCircle, Scale } from "@mui/icons-material"
 import "../index.css"
 import { demoVideoUrl, demoVideoTitle, demoChannelUrl, demoChannelTitle } from "../utils/constant"
 
@@ -14,6 +14,7 @@ function VideoCard({ video: { id: { videoId }, snippet } }) {
   const [isThumbnailLoaded, setIsThumbnailLoaded] = useState(false)
 
   useEffect(() => {
+    
     let observer = new window.IntersectionObserver((entries, self) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
