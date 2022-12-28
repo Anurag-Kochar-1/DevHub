@@ -33,24 +33,26 @@ const Navbar = () => (
     >
       {/* <Avatar src={logo} alt="logo" sx={{ width: 45, height: 45,  marginX: 2 }}></Avatar> */}
 
-      <Hidden only={"xs"}>
+      {/* <Hidden only={"xs"}> */}
         <Typography
           variant="h5"
-          sx={{ color: "white", fontWeight: "bold" }}
+          sx={{fontSize: { xs: "1.4rem", md: "1.6rem" }, color: "white", fontWeight: "bold" }}
         >
           Dev 
         </Typography>
         <Typography
           variant="h5"
-          sx={{ color: "black",backgroundColor:"#ffa31a", fontWeight: "bold", paddingX: 1, borderRadius: 2, marginLeft: 1 }}
+          sx={{fontSize: { xs: "1.4rem", md: "1.6rem" }, color: "black", backgroundColor:"#ffa31a", fontWeight: "bold", paddingX: 1, paddingY: 0.5, borderRadius: 2, marginLeft: 1 }}
         >
           Hub 
         </Typography>
 
-      </Hidden>
+      {/* </Hidden> */}
     </Link>
 
+    {/* ============== SearchBar ============== */}
     <SearchBar />
+    {/* ============== SearchBar ============== */}
 
     <Hidden only={"xs"}>
         <Stack direction="row" spacing={2} >

@@ -31,7 +31,7 @@ function SearchBar() {
         display: "flex",
         justifyContent:"space-between",
         alignItems: "center",
-        width: {xs: "50%",sm: "35%", md: "40%", lg: "50%"},
+        width: {xs: "40%",sm: "35%", md: "40%", lg: "50%"},
         backgroundColor: "#292929",
         borderRadius: 20,
         px: 2,
@@ -43,17 +43,15 @@ function SearchBar() {
       <Input 
       fullWidth
       sx={{ color: "white", px: "5px"}}  
-      placeholder="Search..."  
+      placeholder="Search DevHub....."  
       value={searchTerm} 
       onChange={(e) => {
         setSearchTerm(e.target.value);
       }} 
-      label="Standard error"
+      label="Standard warning"
       variant="standard"
-      color="error"
+      color="warning"
       />
-
-
 
 
 

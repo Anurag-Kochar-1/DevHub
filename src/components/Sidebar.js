@@ -16,20 +16,22 @@ const Sidebar = ( { selectedCategory , setSelectedCategory } ) => (
     {categories.map((category) => (
         <button
         className='category-btn'
-        style={{background: category.name === selectedCategory &&"#FC1503",
+        style={{background: category.value === selectedCategory && "#ffa31a",
         color: "white"
         }}
         key={category.id}
-        onClick={() => setSelectedCategory(category.name) }
+        onClick={() => {
+            setSelectedCategory(category?.value) 
+        }}
         >
             <span
-            style={{color: category.name === selectedCategory ? "white" : "#ffa31a",
+            style={{color: category.value === selectedCategory ? "white" : "#ffa31a",
             marginRight: "15px"
             }}
             >{category.icon}</span>
 
             <span
-            style={{opacity: category.name === selectedCategory ? "1" : "0.8" }}
+            style={{opacity: category.value === selectedCategory ? "1" : "0.8" }}
             >{category.name}</span>
         </button>
     ))}
