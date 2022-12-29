@@ -4,25 +4,31 @@ import { Sidebar, Videos } from "./"
 import { FetchFromApi } from '../utils/FetchFromApi'
 import "../index.css"
 import introGif from '../assets/gifs/introGif.gif'
+import DevHubIntro from '../assets/gifs/DevHubIntro.gif'
 
 function Feed() {
 
     const [selectedCategory, setSelectedCategory] = useState("Web Development")
     const [videos, setVideos] = useState([])
+    const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
         FetchFromApi(`search?part=snippet&q=${selectedCategory}`)
             .then((data) => {
                 setVideos(data.items) 
+                setTimeout(() => {
+                    setIsLoaded(true)
+                    console.log("`````````````````````  set time out is running")
+                }, 2500);
             })
             .catch((err) => console.log(err.message))
     }, [selectedCategory])
 
 
-    if (!videos) return (
+    if (!isLoaded) return (
         <Box sx={{ backgroundColor: "black", zIndex: "100", position: "fixed", top: "0", right: "0", left: "0", bottom: "0", width: "100vw", height: "100vh", display: 'flex', justifyContent: "center", alignItems: "center" }}>                
             {/* <CircularProgress />  */}
-            <img src={introGif} alt="intro" />
+            <img style={{width: "50%"}} src={DevHubIntro} alt="intro" />
          </Box>
     )
 

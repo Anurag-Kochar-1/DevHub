@@ -5,7 +5,7 @@ import { Typography, Box, Stack } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Videos } from "./";
 import { FetchFromApi } from "../utils/FetchFromApi";
-import introGif from "../assets/gifs/introGif.gif"
+import DevHubIntro from "../assets/gifs/DevHubIntro.gif"
 
 const VideoDetail = () => {
   const [videoDetail, setVideoDetail] = useState(null);
@@ -30,7 +30,7 @@ const VideoDetail = () => {
   if (!videos) return (
     <Box sx={{ backgroundColor: "black", zIndex: "100", position: "fixed", top: "0", right: "0", left: "0", bottom: "0", width: "100vw", height: "100vh", display: 'flex', justifyContent: "center", alignItems: "center" }}>
       {/* <CircularProgress />  */}
-      <img src={introGif} alt="intro" sx={{width: "50%", height: "50vh" }} />
+      <img style={{width: "50%"}} src={DevHubIntro} alt="intro" />
     </Box>
   )
 
