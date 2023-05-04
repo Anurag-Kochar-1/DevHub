@@ -17,7 +17,7 @@ function Feed() {
                 setVideos(data.items) 
                 setTimeout(() => {
                     setIsLoaded(true)
-                }, 1000);
+                }, 1000)
             })
             .catch((err) => console.log(err.message))
     }, [selectedCategory])
