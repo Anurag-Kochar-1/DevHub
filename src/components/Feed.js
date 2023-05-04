@@ -3,7 +3,6 @@ import { Box, CircularProgress, Stack, Typography } from "@mui/material"
 import { Sidebar, Videos } from "./"
 import { FetchFromApi } from '../utils/FetchFromApi'
 import "../index.css"
-import introGif from '../assets/gifs/introGif.gif'
 import DevHubIntro from '../assets/gifs/DevHubIntro.gif'
 
 function Feed() {
@@ -18,8 +17,7 @@ function Feed() {
                 setVideos(data.items) 
                 setTimeout(() => {
                     setIsLoaded(true)
-                    console.log("`````````````````````  set time out is running")
-                }, 2500);
+                }, 1000);
             })
             .catch((err) => console.log(err.message))
     }, [selectedCategory])
